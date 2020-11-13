@@ -1,129 +1,22 @@
-<!DOCTYPE html>
-<!--QUE MIRAI SAPO QLO?-->
 <html>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-   	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>iCacerola #Apruebo</title>
-	<meta name="title" content="iCacerola #Apruebo">
-	<meta name="description" content="#Apruebo #ConvencionConstitucional">
-	<meta name="keywords" content="cacerolazo, despierta, chile, renuncia, piñera, apruebo, convencion, constitucional">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="Spanish">
-
-    <meta property="og:title" content="iCacerola #Apruebo"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://www.icacerola.cl/"/>
-    <meta property="og:site_name" content="iCacerola #Apruebo "/>
-    <meta property="og:description" content="#Apruebo #ConvencionConstitucional"/>
-    <meta property="og:image" content="https://www.icacerola.cl/fb-apruebo.png"/>
-
-<style type="text/css">
-	html,
-	body {
-	  height: 100%;
-	  margin: 0;
-	  padding: 0;
-	  overflow: hidden;
-	}
-
-	div, canvas {
-	  position: absolute !important;
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  margin: auto;
-	  max-width: 400px;
-	}
-
-	div img {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  margin: auto;
-	  width: 100%;
-	  max-width: 400px;
-	  opacity: 0;
-	}
-
-	@media only screen and (max-width: 600px) {
-		div img, canvas {
-			max-width: 350px;
-		}
-	}
-</style>
-
-<script src="https://www.icacerola.cl/freezeframe.min.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150865073-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-150865073-1');
-</script>
-
-
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+<style type="text/css">  .img-swap {cursor: pointer;}  </style> 
 <script type="text/javascript">
-//<![CDATA[
-
-window.onload=function(){
-    new Freezeframe({
-  selector: '.my-class-2',
-  trigger: 'click'
-});
-      
-    document.getElementById('play').addEventListener('click', function (e) {
-        e.preventDefault();
-  
-        myAudio = document.getElementById('audio'); 
-
-        myAudio.ontimeupdate= function(i) {
-            if((this.currentTime / this.duration)>0.99){
-                this.currentTime = 2;
-                this.play();
-            }
-        };
-    
-   	    if (myAudio.paused) {
-            myAudio.play();
-        }
-        else {
-            myAudio.pause();
-        }
-    });
-
-
-    function toggleClass(element, tClass) {
-        tClass = tClass.replace(/\s/g, "");
-
-        var classes =  element.className;
-        element.className = classes.indexOf(tClass) !== -1 
-            ? classes.replace(" " + tClass, "")
-            : classes + " " + tClass;
-    }
-}
-
-  //]]>
+$(document).ready(function()//preload images
+{ $(".img-swap").each(function () {$.ajax({url: this.src})})})
+jQuery(function(){
+ $(".img-swap").live('click', function() {
+  if ($(this).attr("class") == "img-swap") { this.src = this.src.replace(".png",".gif"); }
+ else {this.src = this.src.replace(".gif",".png"); }
+ $(this).toggleClass("on");});});
 </script>
-
 </head>
+
 <body>
-
-<audio id="audio" preload loop>
-  <source src="https://www.icacerola.cl/cacerolazo3.mp3" type="audio/mpeg">
-  <source src="https://www.icacerola.cl/cacerolazo3.ogg" type="audio/ogg">
-</audio>
-
-<div id="cacerola" class=""><a href="#" id="play"><img class="my-class-2" src="https://www.icacerola.cl/apruebo.gif"></a></div>
-
+<p>
+<img alt="video gif animation" class="img-swap" src="addimage.png">
+</p>
 </body>
 </html>
